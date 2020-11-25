@@ -6,14 +6,14 @@ import matplotlib.pyplot as plt
 
 # khana count of 8 upazillas
 khana_count = [
-    43,
-    64,
-    84,
-    22,
-    10,
-    93,
-    7,
-    126
+    1315,
+    8159,
+    3777,
+    949,
+    182,
+    3623,
+    599,
+    1685
 ]
 
 # 8 upazillas list
@@ -61,8 +61,8 @@ plt.xticks(y_pos, upazillas)
 
 # labels
 plt.ylabel('Khana Registration')
-# plt.title('8 Upazilla\'s Data Collection Report (23rd October to 23rd November)')
-plt.title('8 Upazilla\'s Data Collection Report 23rd November')
+plt.title('8 Upazilla\'s Data Collection Report (23rd October to 24th November)')
+# plt.title('8 Upazilla\'s Data Collection Report 24th November')
 
 
 plt.show()
