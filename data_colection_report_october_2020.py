@@ -5,31 +5,33 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # khana count of 8 upazillas
-khana_count = [
+member_count = [
     1320,
-    8994,
-    4039,
-    1037,
-    192,
-    3863,
+    9077,
+    4050,
+    1039,
+    228,
+    3874,
     612,
     1817
 ]
 
+total_registered_member = member_count[0] + member_count[1] + member_count [2] + member_count [3] + member_count [4] + member_count [5] + member_count [6] + member_count [7]
+
 # 8 upazillas list
 upazillas = (
-    'Singair' + "\n" + str(khana_count[0]),
-    'Daudkandi' + "\n" + str(khana_count[1]),
-    'Sujanagar' + "\n" + str(khana_count[2]),
-    'Pirgacha' + "\n" + str(khana_count[3]),
-    'Madhabpur' + "\n" + str(khana_count[4]),
-    'Dacope' + "\n" + str(khana_count[5]),
-    'Nalcity' + "\n" + str(khana_count[6]),
-    'Muktagacha' + "\n" + str(khana_count[7])
+    'Singair' + "\n" + str(member_count[0]),
+    'Daudkandi' + "\n" + str(member_count[1]),
+    'Sujanagar' + "\n" + str(member_count[2]),
+    'Pirgacha' + "\n" + str(member_count[3]),
+    'Madhabpur' + "\n" + str(member_count[4]),
+    'Dacope' + "\n" + str(member_count[5]),
+    'Nalcity' + "\n" + str(member_count[6]),
+    'Muktagacha' + "\n" + str(member_count[7])
     )
 y_pos = np.arange(len(upazillas))
 
-bar_lists = plt.bar(y_pos, khana_count)
+bar_lists = plt.bar(y_pos, member_count)
 
 # set individual colors for individual upazillas
 # Singair upazilla -> violet
@@ -60,8 +62,8 @@ bar_lists[7].set_color('#000000')
 plt.xticks(y_pos, upazillas)
 
 # labels
-plt.ylabel('Khana Registration')
-plt.title('8 Upazilla\'s Data Collection Report (23rd October to 19th December)')
+plt.ylabel('Member Registration')
+plt.title('8 Upazilla\'s Data Collection Report (23rd October to 25th December)' + "\n" + "Total Registered Member = " + str(total_registered_member))
 # plt.title('8 Upazilla\'s Data Collection Report 24th November')
 
 
