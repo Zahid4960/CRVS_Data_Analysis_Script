@@ -4,39 +4,84 @@ plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
 
-# khana count of 8 upazillas
-member_count = [
+# array for 8 upazillas
+upazilla_array = [
+    "Singair",
+    "Daudkandi",
+    "Sujanagar",
+    "Pirgacha",
+    "Madhabpur",
+    "Dacope",
+    "Nalcity",
+    "Muktagacha"
+]
+
+# array for upazilla_wise_member_registration_array
+upazilla_wise_member_registration_array = [
     1320,
-    9077,
-    4050,
+    9165,
+    4107,
     1039,
-    228,
+    254,
     3874,
     612,
     1817
 ]
 
-total_registered_member = member_count[0] + member_count[1] + member_count [2] + member_count [3] + member_count [4] + member_count [5] + member_count [6] + member_count [7]
+# get indexes of sorted upazilla_wise_member_registration_array
+s = np.array(upazilla_wise_member_registration_array)
+sort_index = np.argsort(s)
 
-# 8 upazillas list
-upazillas = (
-    'Singair' + "\n" + str(member_count[0]),
-    'Daudkandi' + "\n" + str(member_count[1]),
-    'Sujanagar' + "\n" + str(member_count[2]),
-    'Pirgacha' + "\n" + str(member_count[3]),
-    'Madhabpur' + "\n" + str(member_count[4]),
-    'Dacope' + "\n" + str(member_count[5]),
-    'Nalcity' + "\n" + str(member_count[6]),
-    'Muktagacha' + "\n" + str(member_count[7])
-    )
-y_pos = np.arange(len(upazillas))
+# intitiatize ascending and descending value
+ascending = 0
+descending = 0
 
-bar_lists = plt.bar(y_pos, member_count)
+# sor upazilla_wise_member_registration_array in ascending order
+# upazilla_wise_member_registration_array.sort(reverse=False)
+# ascending = 1
+# print(sort_index)
+
+# sor upazilla_wise_member_registration_array in descending order
+upazilla_wise_member_registration_array.sort(reverse=True)
+descending = 1
+# print(sort_index)
+
+# total registered member
+total_registered_member = upazilla_wise_member_registration_array[0] +upazilla_wise_member_registration_array[1] + upazilla_wise_member_registration_array [2] + upazilla_wise_member_registration_array [3] + upazilla_wise_member_registration_array [4] + upazilla_wise_member_registration_array [5] + upazilla_wise_member_registration_array [6] + upazilla_wise_member_registration_array [7]
+# print(total_registered_member)
+
+if ascending == 1:
+    # 8 upazillas list
+    upazillas = (
+        upazilla_array[sort_index[0]] + "\n" + str(upazilla_wise_member_registration_array[0]),
+        upazilla_array[sort_index[1]] + "\n" + str(upazilla_wise_member_registration_array[1]),
+        upazilla_array[sort_index[2]] + "\n" + str(upazilla_wise_member_registration_array[2]),
+        upazilla_array[sort_index[3]] + "\n" + str(upazilla_wise_member_registration_array[3]),
+        upazilla_array[sort_index[4]] + "\n" + str(upazilla_wise_member_registration_array[4]),
+        upazilla_array[sort_index[5]] + "\n" + str(upazilla_wise_member_registration_array[5]),
+        upazilla_array[sort_index[6]] + "\n" + str(upazilla_wise_member_registration_array[6]),
+        upazilla_array[sort_index[7]] + "\n" + str(upazilla_wise_member_registration_array[7])
+        )
+
+if descending == 1:
+        # 8 upazillas list
+        upazillas = (
+            upazilla_array[sort_index[7]] + "\n" + str(upazilla_wise_member_registration_array[0]),
+            upazilla_array[sort_index[6]] + "\n" + str(upazilla_wise_member_registration_array[1]),
+            upazilla_array[sort_index[5]] + "\n" + str(upazilla_wise_member_registration_array[2]),
+            upazilla_array[sort_index[4]] + "\n" + str(upazilla_wise_member_registration_array[3]),
+            upazilla_array[sort_index[3]] + "\n" + str(upazilla_wise_member_registration_array[4]),
+            upazilla_array[sort_index[2]] + "\n" + str(upazilla_wise_member_registration_array[5]),
+            upazilla_array[sort_index[1]] + "\n" + str(upazilla_wise_member_registration_array[6]),
+            upazilla_array[sort_index[0]] + "\n" + str(upazilla_wise_member_registration_array[7])
+            )
+
+y_pos = np.arange(len(upazilla_array))
+bar_lists = plt.bar(y_pos, upazilla_wise_member_registration_array)
 
 # set individual colors for individual upazillas
 # Singair upazilla -> violet
 bar_lists[0].set_color('#EE82EE')
-# bar_lists[0].label('Zahid')
 
 # Daudkandi upazilla -> Indigo
 bar_lists[1].set_color('#4b0082')
@@ -63,8 +108,6 @@ plt.xticks(y_pos, upazillas)
 
 # labels
 plt.ylabel('Member Registration')
-plt.title('8 Upazilla\'s Data Collection Report (23rd October to 25th December)' + "\n" + "Total Registered Member = " + str(total_registered_member))
-# plt.title('8 Upazilla\'s Data Collection Report 24th November')
-
+plt.title('8 Upazilla\'s Data Collection Report (23rd October 2020 to 2nd January 2021)' + "\n" + "Total Registered Member = " + str(total_registered_member))
 
 plt.show()
