@@ -18,14 +18,14 @@ upazilla_array = [
 
 # array for upazilla_wise_member_registration_array
 upazilla_wise_member_registration_array = [
-    1320,
-    9165,
+    1621,
+    9169,
     4107,
-    1039,
-    254,
-    3874,
-    612,
-    1817
+    1045,
+    260,
+    3880,
+    618,
+    1823
 ]
 
 # get indexes of sorted upazilla_wise_member_registration_array
@@ -108,6 +108,6 @@ plt.xticks(y_pos, upazillas)
 
 # labels
 plt.ylabel('Member Registration')
-plt.title('8 Upazilla\'s Data Collection Report (23rd October 2020 to 2nd January 2021)' + "\n" + "Total Registered Member = " + str(total_registered_member))
+plt.title('8 Upazilla\'s Data Collection Report (23rd October 2020 to 3rd January 2021)' + "\n" + "Total Registered Member = " + str(total_registered_member))
 
 plt.show()
